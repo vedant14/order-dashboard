@@ -1,0 +1,17 @@
+<h1 class="card-title section-break">Showing all <u> <%= params[:status] %> </u> Orders</h1>
+<div class="card-text">
+	<div class="form-group row">
+		<div class="col-md-12">
+			<%= form_tag(orders_path, method: :get, class:"form-inline mt-2 mt-md-0") do %>
+			<div class="form-group row">
+				<div class="col-md-4">
+					<%= select_tag :status, options_for_select([["All",''],"Placed", "Shipped", "Delivered","Return" ], params[:status]), class: "form-control" ,include_blank: false %>
+				</div>
+			</div>
+			<div class="col-md-3">
+	 			 <%= submit_tag 'Search', class: "btn btn-primary my-2 my-sm-0", name: nil %>
+			</div>	
+			<% end %>
+		</div>
+	</div>
+</div>

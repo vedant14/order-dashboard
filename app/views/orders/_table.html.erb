@@ -1,0 +1,26 @@
+<div class="table-responsive">
+    <table class="table table-sm table-striped table-hover">
+        <thead>
+          <tr>
+            <th class="w-5">ID</th>
+            <th class="w-15">Order Date</th>
+            <th class="w-15">Product name</th>
+            <th class="w-35">Status</th>
+            <th class="w-10">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% @orders.each do |order| %>
+              <tr>
+                <td> <%= order.id %> </td>
+                <td> <%=order.created_at.strftime("%d/%m/%Y")  %></td>
+                <td> <%= order.name %> </td>
+                <td> <%= order.status %> </td>
+                </td>  
+                <td>  <%=  link_to "View order", order_path(order)  %> </td>
+              </tr>
+            <% end %>
+        </tbody>
+    </table>
+<div class="row center">
+</div>

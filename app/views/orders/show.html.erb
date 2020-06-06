@@ -1,0 +1,23 @@
+<div class="container">
+	<span class="h1">Order Details </span> <span class="ml-auto"><%= link_to 'Back', :back %></span>
+
+	
+<table class="table table-striped">
+  	<tr>
+        <th class="w-5">ID</th>
+        <td> <%= @order.id %> </td>
+	</tr>    
+   	<tr>
+        <th class="w-15">Order Date</th>
+        <td> <%=@order.created_at.strftime("%d/%m/%Y")  %></td>
+	</tr>
+	<tr>
+        <th class="w-15">Product name</th>
+        <td> <%= @order.name %> </td>
+    </tr>
+    <tr>    
+        <th class="w-35">Status</th>
+        <td> <%= @order.status %> </td>
+	</tr>
+</table>		
+</div>

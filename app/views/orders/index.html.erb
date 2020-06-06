@@ -1,0 +1,8 @@
+<div class = 'container app-body'>
+	<%= render "orders/search" %>
+	<% if @orders.count == 0  %>
+		<h2> No orders match the criteria </h2> 
+	<% else %>
+	    <%= render "orders/table" %>
+	<% end %>  
+</div>
