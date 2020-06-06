@@ -3,6 +3,26 @@
 	<% if @orders.count == 0  %>
 		<h2> No orders match the criteria </h2> 
 	<% else %>
-	    <%= render "orders/table" %>
+		<div class="table-responsive">
+		    <table class="table table-sm table-striped table-hover" id="orders">
+		        <thead>
+		          <tr>
+		            <th class="w-5">ID</th>
+		            <th class="w-15">Order Date</th>
+		            <th class="w-15">Product name</th>
+		            <th class="w-35">Status</th>
+		            <th class="w-10">Actions</th>
+		          </tr>
+		        </thead>
+		        <tbody>
+		            <%= render partial: 'order', collection: @orders %>
+		        </tbody>
+		    </table>
+		<div class="row center">
+		</div>
 	<% end %>  
+</div>
+
+<div id="new-order">
+	<%= link_to "Create a new order", new_order_path, remote: true %> 
 </div>

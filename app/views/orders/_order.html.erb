@@ -1,0 +1,12 @@
+<tr>
+	<td> <%= order.id %> </td>
+	<td> <%=order.created_at.strftime("%d/%m/%Y")  %></td>
+	<td> <%= order.name %> </td>
+	<td> <%= order.status %> </td>
+	<td>  
+		<div class="btn-group">
+			<%=  link_to "View order", order_path(order), class: "btn btn-primary"  %> 
+			<%=  link_to "Delete", order, method: :delete, data: {confirm: 'Are you sure?', remote: true}, class: "delete btn btn-warning" %>
+		</div>
+	</td>
+</tr>
