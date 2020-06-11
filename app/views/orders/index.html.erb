@@ -1,5 +1,8 @@
 <div class = 'container app-body'>
 	<%= render "orders/search" %>
+	<div id="new-order">
+		<%= link_to "Create a new order", new_order_path, remote: true %> 
+	</div>
 	<% if @orders.count == 0  %>
 		<h2> No orders match the criteria </h2> 
 	<% else %>
@@ -23,6 +26,3 @@
 	<% end %>  
 </div>
 
-<div id="new-order">
-	<%= link_to "Create a new order", new_order_path, remote: true %> 
-</div>

@@ -10,14 +10,21 @@
       </ul>
     </div>
   <% end %>
-
   <div class="form-group">
     <%= form.label :name %>
     <%= form.text_field :name, class: "form-control" , autofocus: true %>
   </div>
-
+  <div class="form-group">
+    <%= form.label :status %>
+    <%= select_tag :status, options_for_select([["All",''],"Placed", "Shipped", "Delivered","Return" ], order.status), class: "form-control" ,include_blank: false %>
+  </div>
+  <div class="form-group">
+    <%= form.label :published_at %>
+    <%= form.date_field :published_at, class: "form-control" %>
+  </div>
 
   <div class="form-group">
     <%= form.submit %>
   </div>
+
 <% end %>

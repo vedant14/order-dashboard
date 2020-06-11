@@ -49,7 +49,7 @@ private
   end 
 
   def order_params
-    params.require(:order).permit(:name)
+    params.require(:order).permit(:name, :published_at, :status)
   end
 
 end
