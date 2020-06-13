@@ -21,6 +21,14 @@ namespace :import  do
 			Order.create(name:name, status:status)
 		end
 	end
-	
+
+	task orderqty: :environment do
+		Order.all.each do |order|
+			qty = rand(1...50)
+			order.update!(quantity: qty)
+		end
+	end	
 end
+
+
 

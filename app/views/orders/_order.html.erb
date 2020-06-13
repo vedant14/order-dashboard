@@ -5,6 +5,9 @@
 	<td> <%= order.status %> <%= order.published_at %></td>
 	<td>  
 		<div class="btn-group">
+	        <span id="order_<%= order.id%>_follows">
+      	      <%= render partial: "order_follows", locals: {order: order } %>            
+        	</span>
 			<%=  link_to "View order", order_path(order), class: "btn btn-primary"  %> 
 			<%=  link_to "Delete", order, method: :delete, data: {confirm: 'Are you sure?', remote: true}, class: "delete btn btn-warning" %>
 		</div>

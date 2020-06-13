@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_07_112934) do
+ActiveRecord::Schema.define(version: 2020_06_13_073057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "order_follows", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "order_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "orders", force: :cascade do |t|
     t.string "name"
@@ -21,6 +28,7 @@ ActiveRecord::Schema.define(version: 2020_06_07_112934) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.date "published_at"
+    t.integer "quantity"
   end
 
   create_table "users", force: :cascade do |t|

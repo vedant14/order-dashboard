@@ -1,0 +1,12 @@
+<% if user_signed_in? && current_user.follows?(order) %>
+	<%= link_to order_order_follow_path(order), method: :delete, remote: true do %> 
+		<i class="fas fa-heart"></i>
+	<% end %> 
+<% else %>	
+	<%= link_to order_order_follow_path(order), method: :post, remote: true do %>
+		<i class="far fa-heart"></i>
+	<% end %> 	
+<% end %>
+
+<%= order.order_follows.count %>
+

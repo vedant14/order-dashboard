@@ -1,5 +1,10 @@
 <div class="container">
-	<span class="h1">Order Details </span> <span class="ml-auto"><%= link_to 'Back', :back %></span>
+	<span class="h1">Order Details </span> 
+    <span class="mr-auto"><%= link_to 'Back', :back %>  </span>     
+     <span id= "order_<%=@order.id %>_follows">
+        <%= render partial: "order_follows", locals: {order: @order } %>            
+    </span>
+
 
 	
 <table class="table table-striped">
@@ -22,6 +27,7 @@
     <tr>    
         <th class="w-35">Published At:</th>
         <td> <%= @order.published_at %> </td>
+
     </tr>
 </table>		
 </div>
